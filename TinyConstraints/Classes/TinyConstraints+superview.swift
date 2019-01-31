@@ -98,11 +98,7 @@
         public func leadingToSuperview( _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, relation: ConstraintRelation = .equal, priority: LayoutPriority = .required, isActive: Bool = true, usingSafeArea: Bool = false) -> Constraint {
             let constrainable = safeConstrainable(for: superview, usingSafeArea: usingSafeArea)
             
-            if effectiveUserInterfaceLayoutDirection == .rightToLeft {
-                return leading(to: constrainable, anchor, offset: -offset, relation: relation, priority: priority, isActive: isActive)
-            } else {
-                return leading(to: constrainable, anchor, offset: offset, relation: relation, priority: priority, isActive: isActive)
-            }
+            return leading(to: constrainable, anchor, offset: offset, relation: relation, priority: priority, isActive: isActive)
         }
         
         @available(tvOS 10.0, *)
@@ -111,11 +107,7 @@
         public func trailingToSuperview( _ anchor: NSLayoutXAxisAnchor? = nil, offset: CGFloat = 0, relation: ConstraintRelation = .equal, priority: LayoutPriority = .required, isActive: Bool = true, usingSafeArea: Bool = false) -> Constraint {
             let constrainable = safeConstrainable(for: superview, usingSafeArea: usingSafeArea)
             
-            if effectiveUserInterfaceLayoutDirection == .rightToLeft {
-                return trailing(to: constrainable, anchor, offset: offset, relation: relation, priority: priority, isActive: isActive)
-            } else {
-                return trailing(to: constrainable, anchor, offset: -offset, relation: relation, priority: priority, isActive: isActive)
-            }
+            return trailing(to: constrainable, anchor, offset: offset, relation: relation, priority: priority, isActive: isActive)
         }
         
         @available(tvOS 10.0, *)
